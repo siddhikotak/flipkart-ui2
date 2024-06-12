@@ -7,7 +7,6 @@ import ChatViewHeader from "../ChatViewHeader";
 import MessageContainer from "../MessageContainer";
 
 export default function ChatView({ activeChatData }) {
-  console.log(activeChatData);
   return (
     <div className="chat-view-container">
       <ChatViewHeader
