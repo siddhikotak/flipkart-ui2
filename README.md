@@ -12,5 +12,3 @@ npm run dev
 
 - Added search params hook to add the filted chat id in search params
 - added usefetch hook to fetch the data
-# flipkart-ui2
-# flipkart-ui2
