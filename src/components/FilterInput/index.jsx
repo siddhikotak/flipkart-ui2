@@ -4,7 +4,7 @@ function FilterInput(props) {
   const { value, onInputChange, placeholder } = props;
 
   return (
-    <div style={{ height: "60px" }}>
+    <div style={{ height: "40px", padding: 10 }}>
       <div className="bold">Filter By Title / Order ID</div>
       <input
         className="filter-input"

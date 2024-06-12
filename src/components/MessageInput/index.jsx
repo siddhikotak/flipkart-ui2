@@ -6,7 +6,11 @@ function MessageInput(props) {
 
   return (
     <div className="flex">
-      <input className="message-input" placeholder="Type a Message..." />
+      <input
+        className="message-input"
+        placeholder="Type a Message..."
+        tabIndex={0}
+      />
       <button>send</button>
     </div>
   );

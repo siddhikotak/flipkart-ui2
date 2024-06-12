@@ -5,6 +5,7 @@ import ChatList from "../../components/ChatList";
 import ChatView from "../../components/ChatView";
 import useSearchParams from "../../hooks/useSearchParams";
 import FilterInput from "../../components/FilterInput";
+import { debounceFn } from "../../utils";
 function ChatPage() {
   const [data] = useFetch("chat/chats");
   const [queryFilter, updateQueryFilter] = useSearchParams({});
@@ -28,12 +29,19 @@ function ChatPage() {
     );
   };
 
+  const filterChat = () => {
+    console.log(Date.now);
+    const chatList = chatData?.filter((option) =>
+      filterChatList(option, queryFilter?.filterQuery)
+    );
+    setChatData(chatList);
+  };
+
+  const debouncedFilter = debounceFn(filterChat, 500);
+
   useEffect(() => {
     if (queryFilter?.filterQuery) {
-      const chatList = chatData?.filter((option) =>
-        filterChatList(option, queryFilter?.filterQuery)
-      );
-      setChatData(chatList);
+      debouncedFilter();
     } else {
       setChatData(data);
     }

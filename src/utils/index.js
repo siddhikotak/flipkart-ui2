@@ -52,3 +52,13 @@ export const getTime = (timeStamp) => {
 
   return hours + ":" + strMinutes + " " + ampm;
 };
+
+export const debounceFn = (fn, time) => {
+  let timeout;
+  return () => {
+    if (timeout) clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      fn();
+    }, time);
+  };
+};
