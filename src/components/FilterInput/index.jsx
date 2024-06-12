@@ -1,17 +1,26 @@
-import React from "react";
 import PropTypes from "prop-types";
 import "./style.css";
 function FilterInput(props) {
-  const {} = props;
+  const { value, onInputChange, placeholder } = props;
 
   return (
-    <div>
+    <div style={{ height: "60px" }}>
       <div className="bold">Filter By Title / Order ID</div>
-      <input placeholder="Start typing to search" />
+      <input
+        className="filter-input"
+        tabIndex={-1}
+        aria-label={placeholder}
+        placeholder={placeholder}
+        value={value}
+        onChange={onInputChange}
+      />
     </div>
   );
 }
 
-FilterInput.propTypes = {};
+FilterInput.propTypes = {
+  value: PropTypes.string.isRequired,
+  placeholder: PropTypes.string.isRequired,
+};
 
 export default FilterInput;

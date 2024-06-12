@@ -3,3 +3,7 @@
   padding: 10px;
   border-bottom: 1px solid #eee;
 }
+
+.isChatActive {
+  background-color: #eee;
+}

@@ -1,0 +1,15 @@
+.message-input {
+  border: none;
+  border-top: 2px solid #aaa;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.message-input::placeholder {
+  color: #aaa;
+}
+
+.message-input:focus {
+  outline: none;
+}

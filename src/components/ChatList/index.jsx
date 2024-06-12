@@ -2,15 +2,17 @@
 import Avatar from "../Avatar";
 import ChatTitleHeader from "../ChatTitleHeader";
 import "./style.css";
-import { convertDate } from "../../utils";
+import { classUtils, convertDate } from "../../utils";
 function ChatList(props) {
-  const { chat, setActiveChat } = props;
-
+  const { chat, setActiveChat, activeChatId } = props;
   return (
     <div
       tabIndex={0}
       aria-label={chat.title}
-      className="chat-list-container"
+      className={classUtils({
+        "chat-list-container": true,
+        isChatActive: activeChatId === chat.orderId,
+      })}
       onClick={() => setActiveChat(chat)}
     >
       <Avatar imageURL={chat.imageURL} title={chat.title} />
@@ -18,6 +20,7 @@ function ChatList(props) {
         title={chat.title}
         orderId={chat.orderId}
         date={convertDate(chat.latestMessageTimestamp)}
+        messageList={chat.messageList}
       />
     </div>
   );
