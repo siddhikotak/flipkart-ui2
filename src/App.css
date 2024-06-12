@@ -1,0 +1,11 @@
+#root {
+  margin: 0 auto;
+  padding: 2rem;
+}
+.bold {
+  font-weight: 700;
+}
+.flex {
+  display: flex;
+  align-items: center;
+}

@@ -1,0 +1,16 @@
+.chat-header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.chat-title {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.chat-date {
+  color: #aaa;
+  font-size: 12px;
+  font-weight: bold;
+}
